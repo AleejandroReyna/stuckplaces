@@ -15,7 +15,7 @@
     <tbody>
       <% @places.each do |place| %>
         <tr>
-          <td><%= place.name %></td>
+          <td><%= link_to place.name, place_path(place) %></td>
           <td><%= place.address %></td>
           <td><%= place.description %></td>
           <td><%= place.phone %></td>

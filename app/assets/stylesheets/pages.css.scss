@@ -7,3 +7,24 @@
 	z-index: 1;
 	width: 200px;
 }
+
+.landing_title {
+	width: 100%;
+	height: auto;
+	min-height: calc(100vh - 52px);
+	position: relative;
+	background: url("background.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+}
+
+.landing_title a {
+	position: absolute;
+	top: 48%;
+	left: 45%;
+}
+
+.navbar {
+	margin-bottom: 0;
+}

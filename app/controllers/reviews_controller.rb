@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
 			if @review.save
 				format.html {redirect_to place_path(@review.place), notice: "Yeah!" }
 			else
-				redirect_to place_path(@review.place), notice: ":("
+				format.html {redirect_to place_path(@review.place), notice: ":("}
 			end	
     end
     #@review.save
@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 		if @review.update(review_params)
 				format.html {redirect_to place_path(@review.place), notice: "Yeah! modificate" }
 			else
-				redirect_to place_path(@review.place), notice: ":("
+				format.html {redirect_to place_path(@review.place), notice: ":("}
 			end	
     end
     #@review.update(review_params)
@@ -38,7 +38,7 @@ class ReviewsController < ApplicationController
     if @review.destroy
 			format.html {redirect_to place_path(@review.place), notice: "Yeah! deleted" }
 		else
-			redirect_to place_path(@review.place), notice: ":("
+			format.html {redirect_to place_path(@review.place), notice: ":("}
 		end	
     #@review.destroy
     #respond_with(@review)
@@ -50,6 +50,6 @@ class ReviewsController < ApplicationController
     end
 
     def review_params
-      params.require(:review).permit(:place_id, :content)
+      params.require(:review).permit(:place_id, :content, :score)
     end
 end

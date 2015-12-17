@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
   respond_to :html
 
   def index
-    @places = Place.all
+    @places = Place.search(params[:search])
     respond_with(@places)
   end
 

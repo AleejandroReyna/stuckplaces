@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216204640) do
+ActiveRecord::Schema.define(version: 20151217160231) do
 
   create_table "places", force: true do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20151216204640) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "total_average_rating", default: 0
   end
 
   create_table "reviews", force: true do |t|

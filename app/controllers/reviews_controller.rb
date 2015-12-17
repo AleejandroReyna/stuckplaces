@@ -35,11 +35,13 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    if @review.destroy
-			format.html {redirect_to place_path(@review.place), notice: "Yeah! deleted" }
-		else
-			format.html {redirect_to place_path(@review.place), notice: ":("}
-		end	
+    respond_to do |format|
+      if @review.destroy
+  			format.html {redirect_to place_path(@review.place), notice: "Yeah! deleted" }
+  		else
+  			format.html {redirect_to place_path(@review.place), notice: ":("}
+  		end	
+    end
     #@review.destroy
     #respond_with(@review)
   end
